@@ -3,7 +3,9 @@ import 'dart:developer';
 import 'package:flutter/material.dart';
 
 import 'dev/Tutorial.dart';
+import 'dev/platformspecific/PlateformChannel.dart';
 import 'dev/understadingconstraints.dart';
+import 'flutterchina/RowColumn/Row.dart';
 import 'geek/g11/MainGeek11.dart';
 
 void main() => runApp(MaterialApp(
@@ -43,6 +45,18 @@ class FirstScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (context) => new Geek11()));
+                }),
+            RaisedButton(
+                child: Text('Flutter Android交互'),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => new PlatformChannel()));
+                }),
+            RaisedButton(
+                child: Text('https://book.flutterchina.club/'),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => new ClubRow()));
                 }),
           ],
         ),
