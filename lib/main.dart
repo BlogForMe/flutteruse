@@ -5,8 +5,11 @@ import 'package:flutter/material.dart';
 import 'dev/Tutorial.dart';
 import 'dev/platformspecific/PlateformChannel.dart';
 import 'dev/understadingconstraints.dart';
-import 'flutterchina/RowColumn/Row.dart';
+import 'flutterchina/ButtonCustom.dart';
+import 'flutterchina/RowColumn/CenterColumnRoute.dart';
+import 'flutterchina/RowColumn/ClubRow.dart';
 import 'geek/g11/MainGeek11.dart';
+import 'geek/g5/TestStatefulWidget.dart';
 
 void main() => runApp(MaterialApp(
       title: '页面跳转返回数据',
@@ -44,7 +47,7 @@ class FirstScreen extends StatelessWidget {
                 child: Text('如何巧妙地应用 Flutter 有/无状态组件'),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => new Geek11()));
+                      MaterialPageRoute(builder: (context) => new LifeCycle()));
                 }),
             RaisedButton(
                 child: Text('Flutter Android交互'),
@@ -56,7 +59,7 @@ class FirstScreen extends StatelessWidget {
                 child: Text('https://book.flutterchina.club/'),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => new ClubRow()));
+                      MaterialPageRoute(builder: (context) => new ButtonCustom()));
                 }),
           ],
         ),
