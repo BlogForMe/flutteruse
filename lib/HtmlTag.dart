@@ -10,56 +10,42 @@ class HtmlTag extends StatelessWidget {
   Widget build(BuildContext context) {
     // TODO: implement build
 
-    return _HtmlTab();
+    return Scaffold(
+      appBar: AppBar(title: Text("Html 标签显示")),
+      body: Stack(
+        alignment: Alignment.center,
+        children: [
+          SingleChildScrollView(
+            child: _HtmlTab(),
+          ),
+          Positioned(
+            bottom: 1,
+            child: Text(
+              '底部文字',
+              style: TextStyle(fontSize: 60, color: Colors.lightBlueAccent),
+            ),
+          )
+        ],
+      ),
+    );
   }
 }
 //    https://health.casanubeserver.com/csn_hospital_APIServer/servletUtil/getInformationUrl?informationContentId=580
 
-
 Widget _HtmlTab() {
   return Container(
-    child: Html(
-      data: """
-    <!--For a much more extensive example, look at example/main.dart-->
-   <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- saved from url=(0111)https://health.casanubeserver.com/csn_hospital_APIServer/servletUtil/getInformationUrl?informationContentId=580 -->
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>血透肾友居家饮食禁忌——高钠食物</title></head>
-  <body>
-<p style="text-align:center"><span style="font-size:36px">血透肾友居家饮食禁忌——<span style="color:#e74c3c">高钠食物</span></span></p>
-
-<p><span style="font-size:28px">钠又隐藏在哪些食物中呢？研究显示，我国居民中70%的钠摄入都来自于做饭时添加的调味品，也就是盐、酱油、蚝油这些做饭最常用到的“好帮手”。可见，肾友们在做饭时对钠的控制使用尤为关键。</span></p>
-
-<p style="text-align:center"><span style="font-size:28px"><img alt="" src="https://health.casanubeserver.com/images/20200710/调料59baa56364384477be73ca06eb76bfeb.jpg" style="height:387px; width:600px">​​​​​​​</span></p>
-
-<p><span style="font-size:28px"><span style="color:#e74c3c">高钠食物：</span>盐、酱油、味精、鸡精、腐乳、咸菜、虾皮、火腿、腌制品、熏鱼、酱鸭、笋干、鱼干</span></p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-  
-
-</body></html>
-  """,
-      //Optional parameters:
-      padding: EdgeInsets.all(8.0),
-      backgroundColor: Colors.white70,
-      defaultTextStyle: TextStyle(fontFamily: 'serif'),
-      linkStyle: const TextStyle(
-        color: Colors.redAccent,
-      ),
-      onLinkTap: (url) {
-        // open url in a webview
-      },
-      customRender: (node, children) {
-        // if(node is dom.Element) {
-        //   switch(node.localName) {
-        //     case "video": return Chewie(...);
-        //     case "custom_tag": return CustomWidget(...);
-        //   }
-        // }
-      },
+    child: Column(
+      children: [
+        showHtml(),
+        Text(
+          '显示文字',
+          style: TextStyle(fontSize: 60, color: Colors.lightBlueAccent),
+        ),
+        Text(
+          '连接文字',
+          style: TextStyle(fontSize: 60, color: Colors.lightBlueAccent),
+        )
+      ],
     ),
   );
 }
@@ -82,3 +68,79 @@ Widget _HtmlTab() {
 //     ),
 //   );
 // }
+
+Widget showHtml() {
+  return Html(
+    data: """
+   <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+
+<p>&nbsp;</p>
+
+<p>&nbsp;</p>
+
+<p><img alt="" src="https://dev.casanubeserver.com/images/20200923/微信图片_2020080920050488157961ecf148609dd186fa01ecca73.png" style="height:100%; width:100%" /></p>
+  """,
+    //Optional parameters:
+    padding: EdgeInsets.all(8.0),
+    backgroundColor: Colors.white70,
+    defaultTextStyle: TextStyle(fontFamily: 'serif'),
+    linkStyle: const TextStyle(
+      color: Colors.redAccent,
+    ),
+    onLinkTap: (url) {
+      // open url in a webview
+    },
+    customRender: (node, children) {
+      // if(node is dom.Element) {
+      //   switch(node.localName) {
+      //     case "video": return Chewie(...);
+      //     case "custom_tag": return CustomWidget(...);
+      //   }
+      // }
+    },
+  );
+}
