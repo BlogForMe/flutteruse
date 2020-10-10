@@ -17,19 +17,21 @@ class _RecognitionState extends State<CustomScroll> {
         appBar: AppBar(title: Text('扫描结果')),
         body: Container(
           // color: Color(0XffFAD961),
-          child: Stack(
-            children: [
-              Container(
-                padding: EdgeInsets.all(15),
-                child: DecoratedBox(
-                    child: resultReg(),
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(6))),
-              ),
-              bottomButton(),
-            ],
-          ),
+          // child: Column(
+          //   children: [
+          //     Container(
+          //       padding: EdgeInsets.all(15),
+          //       child: DecoratedBox(
+          //           child: resultReg(),
+          //           decoration: BoxDecoration(
+          //               color: Colors.white,
+          //               borderRadius: BorderRadius.circular(6))),
+          //     ),
+          //     bottomButton(),
+          //   ],
+          // ),
+
+          child: resultReg(),
         ));
   }
 
@@ -82,7 +84,7 @@ class _RecognitionState extends State<CustomScroll> {
 
   Widget _nutritionItem(BuildContext context) {
     return Container(
-      padding: EdgeInsets.only(top: 10, bottom: 10),
+      padding: EdgeInsets.only(top: 20, bottom: 20),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
