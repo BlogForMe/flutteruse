@@ -3,8 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutteruse/widget/casSelectView.dart';
 import 'package:flutteruse/widget/preference.dart';
 
-import 'CuperDialog1.dart';
+import 'CuperDialog2.dart';
 import 'DialogCheckbox.dart';
+import 'bottomDialog.dart';
 
 class DialogShow extends StatefulWidget {
   @override
@@ -46,59 +47,61 @@ class _MyHomePageState extends State<DialogShow> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-        appBar: AppBar(
-          title: Text('显示dialog'),
-        ),
-        body: Column(
-          children: [
-            RaisedButton(
-              onPressed: () {
-                CasSelectView.showDialogConfirm(context,
-                    titles: '我是title',
-                    content: '我是content',
-                    confirmTxt: '确认', onConfirm: () {
-                  print('确认');
-                }, onCancel: () {
-                  print('取消');
-                });
-              },
-              child: Text('确认 取消'),
-            ),
-            RaisedButton(
-              onPressed: () {
-                // CasSelectView.customSelectView(context, onConfirm: (idx) {}, onChanged: (index) {
-                //   setState(() {
-                //     print('index $index');
-                //   });
-                // });
-              },
-              child: Text('底部弹出框'),
-            ),
-            RaisedButton(
-              child: Text("对话框2"),
-              onPressed: () async {
-                bool delete = await showDeleteConfirmDialog2();
-                if (delete == null) {
-                  print("取消删除");
-                } else {
-                  print("同时删除子目录: $delete");
-                }
-              },
-            ),
-            RaisedButton(
-              child: Text("话框3（复选框可点击）"),
-              onPressed: () async {
-                //弹出删除确认对话框，等待用户确认
-                bool deleteTree = await showDeleteConfirmDialog3();
-                if (deleteTree == null) {
-                  print("取消删除");
-                } else {
-                  print("同时删除子目录: $deleteTree");
-                }
-              },
-            ),
-          ],
-        ),
+      appBar: AppBar(
+        title: Text('显示dialog'),
+      ),
+      body: Column(
+        children: [
+          RaisedButton(
+            onPressed: () {
+              CasSelectView.showDialogConfirm(context,
+                  titles: '我是title',
+                  content: '我是content',
+                  confirmTxt: '确认', onConfirm: () {
+                print('确认');
+              }, onCancel: () {
+                print('取消');
+              });
+            },
+            child: Text('确认 取消'),
+          ),
+          RaisedButton(
+            onPressed: () async {
+              // CasSelectView.customSelectView(context, onConfirm: (idx) {}, onChanged: (index) {
+              //   setState(() {
+              //     print('index $index');
+              //   });
+              // });
+              var selectId = await BottomDialog.cuperDialog2(context);
+              print('selectId $selectId');
+            },
+            child: Text('底部弹出框'),
+          ),
+          RaisedButton(
+            child: Text("对话框2"),
+            onPressed: () async {
+              bool delete = await showDeleteConfirmDialog2();
+              if (delete == null) {
+                print("取消删除");
+              } else {
+                print("同时删除子目录: $delete");
+              }
+            },
+          ),
+          RaisedButton(
+            child: Text("话框3（复选框可点击）"),
+            onPressed: () async {
+              //弹出删除确认对话框，等待用户确认
+              bool deleteTree = await showDeleteConfirmDialog3();
+              if (deleteTree == null) {
+                print("取消删除");
+              } else {
+                print("同时删除子目录: $deleteTree");
+              }
+            },
+          ),
+        ],
+      ),
     );
   }
 
@@ -213,4 +216,6 @@ class _MyHomePageState extends State<DialogShow> {
       },
     );
   }
+
+
 }

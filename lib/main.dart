@@ -81,7 +81,7 @@ class FirstScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => new CuperDialog1()));
+                          builder: (context) => new DialogShow()));
                 }),
           ],
         ),
