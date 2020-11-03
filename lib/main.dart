@@ -1,19 +1,20 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:flutteruse/dev/textfieldinput.dart';
+import 'package:flutteruse/poup/textPoup.dart';
+import 'package:flutteruse/widget/MineRequest.dart';
+import 'package:get/get.dart';
+import 'package:get/get_navigation/src/root/root_widget.dart';
 
-import 'HtmlTag.dart';
-import 'dev/CustomScroll.dart';
 import 'dev/Tutorial.dart';
 import 'dev/platformspecific/PlateformChannel.dart';
 import 'dev/understadingconstraints.dart';
-import 'flutterchina/ButtonCustom.dart';
-import 'flutterchina/RowColumn/CenterColumnRoute.dart';
-import 'flutterchina/RowColumn/ClubRow.dart';
-import 'geek/g11/MainGeek11.dart';
+import 'dialog/CuperDialog1.dart';
+import 'dialog/showdialog.dart';
+import 'flutterchina/page/HomeScreen.dart';
 import 'geek/g5/TestStatefulWidget.dart';
+import 'globle/globlekey.dart';
 
-void main() => runApp(MaterialApp(
+void main() => runApp(GetMaterialApp(
       title: '页面跳转返回数据',
       home: FirstScreen(),
     ));
@@ -49,7 +50,8 @@ class FirstScreen extends StatelessWidget {
                 child: Text('如何巧妙地应用 Flutter 有/无状态组件'),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => new LifeCycle()));
+                      MaterialPageRoute(builder: (context) => new TextFieldInput()));
+                  // Get.toNamed(page:TextFieldInput());
                 }),
             RaisedButton(
                 child: Text('Flutter Android交互'),
@@ -63,7 +65,7 @@ class FirstScreen extends StatelessWidget {
                 child: Text('https://book.flutterchina.club/'),
                 onPressed: () {
                   Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => new HtmlTag()));
+                      MaterialPageRoute(builder: (context) => new PageRouterScreen()));
                 }),
             RaisedButton(
                 child: Text('SCROLL VIEW'),
@@ -71,7 +73,15 @@ class FirstScreen extends StatelessWidget {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => new CustomScroll()));
+                          builder: (context) => new GlobleKeyHomePage()));
+                }),
+            RaisedButton(
+                child: Text('显示文字'),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => new CuperDialog1()));
                 }),
           ],
         ),

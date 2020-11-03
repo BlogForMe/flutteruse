@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:flutteruse/widget/casScaffold.dart';
 
 class LifeCycle extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // TODO: implement build
-    return MaterialApp(
-      title: "Two You",
-      theme: ThemeData(primarySwatch: Colors.blue),
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('Two You'),
-        ),
-        body: Center(
-          child: TestStatefulWidget(),
-        ),
+    return CasScaffold.scaffold(
+      title:'Two you',
+      body: Center(
+        child: TestStatefulWidget(),
       ),
     );
   }

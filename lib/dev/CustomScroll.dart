@@ -16,22 +16,32 @@ class _RecognitionState extends State<CustomScroll> {
     return Scaffold(
         appBar: AppBar(title: Text('扫描结果')),
         body: Container(
-          // color: Color(0XffFAD961),
-          // child: Column(
-          //   children: [
-          //     Container(
-          //       padding: EdgeInsets.all(15),
-          //       child: DecoratedBox(
-          //           child: resultReg(),
-          //           decoration: BoxDecoration(
-          //               color: Colors.white,
-          //               borderRadius: BorderRadius.circular(6))),
-          //     ),
-          //     bottomButton(),
-          //   ],
-          // ),
+          color: Color(0XffFAD961),
+          child: Column(
+            children: [
+              Expanded(
+                child: Container(
+                  padding: EdgeInsets.all(15),
+                  child: DecoratedBox(
+                      child: resultReg(),
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(6))),
+                ),
+              )
+              ,
+              bottomButton(),
+            ],
+          )
 
-          child: resultReg(),
+        //   child: Column(
+        //     children: [
+        //       Expanded(
+        //         child: resultReg(),
+        //       ),
+        //       bottomButton(),
+        //     ],
+        //   ),
         ));
   }
 

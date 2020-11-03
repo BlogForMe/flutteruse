@@ -1,6 +1,5 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_html/flutter_html.dart';
 
 /**
  * Html 标签显示
@@ -36,7 +35,7 @@ Widget _HtmlTab() {
   return Container(
     child: Column(
       children: [
-        showHtml(),
+        // showHtml(),
         Text(
           '显示文字',
           style: TextStyle(fontSize: 60, color: Colors.lightBlueAccent),
@@ -69,78 +68,78 @@ Widget _HtmlTab() {
 //   );
 // }
 
-Widget showHtml() {
-  return Html(
-    data: """
-   <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
-
-<p>&nbsp;</p>
-
-<p>&nbsp;</p>
-
-<p><img alt="" src="https://dev.casanubeserver.com/images/20200923/微信图片_2020080920050488157961ecf148609dd186fa01ecca73.png" style="height:100%; width:100%" /></p>
-  """,
-    //Optional parameters:
-    padding: EdgeInsets.all(8.0),
-    backgroundColor: Colors.white70,
-    defaultTextStyle: TextStyle(fontFamily: 'serif'),
-    linkStyle: const TextStyle(
-      color: Colors.redAccent,
-    ),
-    onLinkTap: (url) {
-      // open url in a webview
-    },
-    customRender: (node, children) {
-      // if(node is dom.Element) {
-      //   switch(node.localName) {
-      //     case "video": return Chewie(...);
-      //     case "custom_tag": return CustomWidget(...);
-      //   }
-      // }
-    },
-  );
-}
+// Widget showHtml() {
+//   return Html(
+//     data: """
+//    <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p style="text-align:center"><span style="font-size:24px">这是一条测试数据</span></p>
+//
+// <p>&nbsp;</p>
+//
+// <p>&nbsp;</p>
+//
+// <p><img alt="" src="https://dev.casanubeserver.com/images/20200923/微信图片_2020080920050488157961ecf148609dd186fa01ecca73.png" style="height:100%; width:100%" /></p>
+//   """,
+//     //Optional parameters:
+//     padding: EdgeInsets.all(8.0),
+//     backgroundColor: Colors.white70,
+//     defaultTextStyle: TextStyle(fontFamily: 'serif'),
+//     linkStyle: const TextStyle(
+//       color: Colors.redAccent,
+//     ),
+//     onLinkTap: (url) {
+//       // open url in a webview
+//     },
+//     customRender: (node, children) {
+//       // if(node is dom.Element) {
+//       //   switch(node.localName) {
+//       //     case "video": return Chewie(...);
+//       //     case "custom_tag": return CustomWidget(...);
+//       //   }
+//       // }
+//     },
+//   );
+// }
